@@ -33,6 +33,11 @@ export default defineConfig({
         })
     ],
     resolve: {
-        alias: {}
+        alias: {
+            '~fontawesome': path.resolve(
+                __dirname,
+                'node_modules/@fortawesome/fontawesome-free'
+            )
+        }
     }
 })
