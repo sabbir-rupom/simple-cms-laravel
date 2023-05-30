@@ -2,49 +2,75 @@
 @import "app/library";
 
 body {
-    @apply bg-gray-50 dark:bg-gray-900;
+  @apply bg-gray-50 dark:bg-gray-900;
 }
 
 .page-wrapper {
-    @apply antialiased;
+  @apply antialiased;
 
-    .main-content {
-        @apply p-4 md:ml-64 h-auto pt-20;
+  .main-content {
+    @apply p-4 md:ml-64 h-auto pt-20;
+  }
+}
+
+nav.navbar-top {
+  @apply bg-white border-b border-gray-200 px-4 py-2.5 dark:bg-gray-800 dark:border-gray-700 fixed left-0 right-0 top-0 z-50;
+
+  button.sidebar-drawer {
+    @apply p-2 mr-2 text-gray-600 rounded-lg cursor-pointer md:hidden hover:text-gray-900 hover:bg-gray-100 focus:bg-gray-100 dark:focus:bg-gray-700 focus:ring-2 focus:ring-gray-100 dark:focus:ring-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white;
+  }
+
+  .logo {
+    @apply flex items-center justify-between mr-4 ml-2;
+    .logo-title {
+      @apply mx-2 h-8;
     }
+    .logo-title {
+      @apply self-center text-2xl font-semibold whitespace-nowrap dark:text-white;
+    }
+  }
+
+  .notification-dropdown {
+    @apply p-2 mr-1 text-gray-500 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600;
+  }
+
+  .notification-dropdown-block {
+    @apply hidden overflow-hidden z-50 my-4 max-w-sm text-base list-none bg-white rounded divide-y divide-gray-100 shadow-lg dark:divide-gray-600 dark:bg-gray-700 rounded-xl;
+  }
 }
 
 aside.sidebar {
-    @apply fixed top-0 left-0 z-40 w-64 h-screen pt-14 bg-white border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700 transition-transform;
+  @apply fixed top-0 left-0 z-40 w-64 h-screen pt-14 bg-white border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700 transition-transform;
 
-    .sidebar-inner {
-        @apply overflow-y-auto py-5 px-3 h-full bg-white dark:bg-gray-800 mt-10 md:mt-0;
+  .sidebar-inner {
+    @apply overflow-y-auto py-5 px-3 h-full bg-white dark:bg-gray-800 md:mt-0;
 
-        .nav-icon {
-            @apply text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white;
-        }
-
-        ul {
-            li.nav-item {
-                > a {
-                    @apply flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700;
-                }
-
-                > button {
-                    @apply flex items-center p-2 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700;
-
-                    .parent-menu {
-                        @apply flex-1 ml-3 text-left whitespace-nowrap;
-                    }
-                }
-
-                > ul.menu-dropdown {
-                    @apply py-2 space-y-2;
-
-                    li a {
-                        @apply flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700;
-                    }
-                }
-            }
-        }
+    .nav-icon {
+      @apply text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white;
     }
+
+    ul {
+      li.nav-item {
+        > a {
+          @apply flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700;
+        }
+
+        > button {
+          @apply flex items-center p-2 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700;
+
+          .parent-menu {
+            @apply flex-1 ml-3 text-left whitespace-nowrap;
+          }
+        }
+
+        > ul.menu-dropdown {
+          @apply py-2 space-y-2;
+
+          li a {
+            @apply flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700;
+          }
+        }
+      }
+    }
+  }
 }
